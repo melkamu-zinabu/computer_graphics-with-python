@@ -3,49 +3,7 @@ from OpenGL.GL import *
 #COMMENT
 import numpy as np
 
-
-class triangle:
-    def __init__(self):
-        self.vertices={
-
-
-        }
-        self.vertices=np.array(self.vertices,dtype=np.float32)
-        self.vao=glGenVertexArrays(1)
-        glBindVertexBuffer(self.vao)
-        self.vao=glBindBuffer(GL_ARRAY_BUFFER,self.vao)
-        glBufferData(
-            GL_ARRAY_BUFFER,
-            self.vertices.nbytes,
-            self.vertices,
-            GL_STATIC_DRAW)
-        glEnableVertexArrayAttrib(0)
-        glVertexAttribPointer(
-            0,3,
-            GL_FLOAT,GL_FALSE,24,
-            ctypes.c_void_p(0)
-        )
-
-        glEnableVertexArrayAttrib(1)
-        glVertexAttribPointer(
-            1,3,
-            GL_FLOAT,GL_FALSE,24,
-            ctypes.c_void_p(12)
-        )
-
-
-    def destroy(self):
-        pass
-
-
-
-
-
-
-
-
-
-
+# it is for enmpty screen
 
 class App:
     #constructor
@@ -68,12 +26,43 @@ class App:
             glClear(GL_COLOR_BUFFER_BIT)
             pg.display.flip()       
             self.clock.tick(60)
+# it for drawing triangle
    
+# class triangle:
+#     def __init__(self):
+#         self.vertices={
 
+
+#         }
+#         self.vertices=np.array(self.vertices,dtype=np.float32)
+#         self.vao=glGenVertexArrays(1)
+#         glBindVertexBuffer(self.vao)
+#         self.vao=glBindBuffer(GL_ARRAY_BUFFER,self.vao)
+#         glBufferData(
+#             GL_ARRAY_BUFFER,
+#             self.vertices.nbytes,
+#             self.vertices,
+#             GL_STATIC_DRAW)
+#         glEnableVertexArrayAttrib(0)
+#         glVertexAttribPointer(
+#             0,3,
+#             GL_FLOAT,GL_FALSE,24,
+#             ctypes.c_void_p(0)
+#         )
+
+#         glEnableVertexArrayAttrib(1)
+#         glVertexAttribPointer(
+#             1,3,
+#             GL_FLOAT,GL_FALSE,24,
+#             ctypes.c_void_p(12)
+#         )
+#     def destroy(self):
+#         glDeleteVertexArrays(1,(self.vao))
+#         glDeleteBuffers
 
 if __name__=="__main__":
     #intialize window
-    app=triangle()
+    app=App()
 
 # import pygame
 # import math
